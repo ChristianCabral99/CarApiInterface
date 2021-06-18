@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">{{obj.brand}} {{obj.model}}</h1>
+    <p class="mb-4">{{ obj.version }} {{ obj.year }}
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card bg-gradient-light" id="prueba1">
+        <!--div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Número de resultados: {{ cuantos }} autos.</h6>
+        </div-->
+        <div class="row justify-content-center">
+
+        <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 col-11">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body">
+        <h1 class="h1 mb-2 text-gray-900 text-center">Agregar modelo de auto</h1>
+
+            <form method="POST" action="/add" enctype='application/json' class="">
+                <div class="form-group">
+                    <label for="formMarca" class="lead">Marca</label>
+                    <input type="text" class="form-control" id="formMarca" name="brand" placeholder="Ejemplo: Toyota" required>
+                </div>
+                <div class="form-group">
+                    <label for="formModelo" class="lead">Modelo</label>
+                    <input type="text" class="form-control" id="formModelo" name="model" placeholder="Ejemplo: Corolla" required>
+                </div>
+                <div class="form-group">
+                    <label for="formYear" class="lead">Año</label>
+                    <input type="number" class="form-control" id="formYear" name="year" placeholder="Ejemplo: 2020" min="1900" max="2022" required>
+                </div>
+                <div class="form-group">
+                    <label for="formVersion" class="lead">Versión</label>
+                    <input type="text" class="form-control" id="formVersion" name="version" placeholder="Ejemplo: Sedan" required>
+                </div>
+                <div class="form-group">
+                    <label for="formPais" class="lead">País de origen</label>
+                    <input type="text" class="form-control" id="formPais" name="country" placeholder="Ejemplo: Japan" required>
+                </div>
+                <div class="form-group">
+                    <label for="formBody" class="lead">Estilo de carrocería</label>
+                    <input type="text" class="form-control" id="formBody" name="body" placeholder="Ejemplo: Midsize" required>
+                </div>
+                <div class="form-group">
+                    <label for="formEngineLoc" class="lead">Ubicación del motor</label>
+                    <input type="text" class="form-control" id="formEngineLoc" name="engine_location" placeholder="Ejemplo: Front" required> 
+                </div>
+                <div class="form-group">
+                    <label for="formCilindros" class="lead">Cilindros</label>
+                    <input type="number" class="form-control" id="formCilindros" name="cylinders" placeholder="Ejemplo: 4" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="formHP" class="lead">Caballos de fuerza (HP)</label>
+                    <input type="number" class="form-control" id="formHP" name="hp" placeholder="Ejemplo: 130" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="formNm" class="lead">Torque (Nm)</label>
+                    <input type="number" class="form-control" id="formNm" name="nm" placeholder="Ejemplo: 128" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="formTraccion" class="lead">Tracción</label>
+                    <input type="text" class="form-control" id="formTraccion" name="drive" placeholder="Ejemplo: Front Wheel Drive" required>
+                </div>
+                <div class="form-group">
+                    <label for="formTransmision" class="lead">Transmisión</label>
+                    <input type="text" class="form-control" id="formTransmision" name="transmission" placeholder="Ejemplo: Automatic" required>
+                </div>
+                <div class="form-group">
+                    <label for="formPuertas" class="lead">Puertas</label>
+                    <input type="number" class="form-control" id="formPuertas" name="doors" placeholder="Ejemplo: 4" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="formPeso" class="lead">Peso (kg)</label>
+                    <input type="number" class="form-control" id="formPeso" name="weight" placeholder="Ejemplo: 2820" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="formRating" class="lead">Rating</label>
+                    <input type="number" class="form-control" id="formRating" name="rating" placeholder="Ejemplo: 9" min="0" max="10" required>
+                </div>
+                <div class="d-grid gap-2 mx-auto text-center">
+                <button type="submit" class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Agregar</span>
+
+                </button>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+{% endblock content %}
